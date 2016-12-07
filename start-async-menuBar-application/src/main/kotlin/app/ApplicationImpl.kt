@@ -30,6 +30,8 @@ class ApplicationImpl internal constructor(private val configuration: Configurat
             this.setCloseOp()
             this.setLayout(FlowLayout())
             this.setContentPane()
+            this.setMenuBar()
+            this.setStatusBar()
 
             this.pack()
             this.setSize()
@@ -69,12 +71,27 @@ class ApplicationImpl internal constructor(private val configuration: Configurat
     }
 
     private fun setContentPane() {
-        this.contentPane.add(configuration.panel?.component(), BorderLayout.CENTER)
+        configuration.panel?.forEach {
+            this.contentPane.add(it.component(), BorderLayout.CENTER)
+        }
+    }
+
+    private fun setMenuBar() {
+        this.jMenuBar = configuration.menuBar?.component()
+        this.jMenuBar.isVisible = false
+    }
+
+    private fun setStatusBar() {
+        this.add(configuration.statusBar?.component(), BorderLayout.SOUTH);
     }
 
     private fun asyncOperations() {
-        val panel = configuration.panel
-        panel?.progressBar?.asyncUI()
-        panel?.textArea?.asyncUI()
+
+        configuration.panel?.forEach {
+            it.progressBar?.asyncUI()
+            it.textArea?.asyncUI()
+        }
+        configuration.statusBar?.asyncUI()
+
     }
 }

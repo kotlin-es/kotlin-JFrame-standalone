@@ -6,6 +6,7 @@ import src.configuration.ConfigurationImpl
 import src.configuration.Display
 import src.configuration.DisplayImpl
 import java.awt.FlowLayout
+import java.util.*
 import java.util.concurrent.ExecutionException
 import javax.swing.SwingUtilities
 
@@ -16,16 +17,24 @@ object Main {
 
     @JvmStatic fun main(args: Array<String>) {
         SwingUtilities.invokeLater {
-            System.out.println("SwingUtilities.invokeLater")
-
             val display = DisplayImpl.create(Display.KFRAME_JAVA, Display.WIDHT, Display.HEIGTH, Display.VISIBLE)
 
             var textArea = TextAreaImpl.create(TextArea.TEXT)
             val progressBar = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
-
             val panel = PanelImpl.create(FlowLayout(),progressBar,textArea)
 
-            val configure = ConfigurationImpl.create(display, panel)
+            var textAreaCenter = TextAreaImpl.create(TextArea.KAFKA)
+            val progressBarCenter = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
+            val panelCenter = PanelImpl.create(FlowLayout(),progressBarCenter,textAreaCenter)
+
+            var textAreaBottom = TextAreaImpl.create(TextArea.LOREMIPSUM)
+            val progressBarBottom = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
+            val panelBottom = PanelImpl.create(FlowLayout(),progressBarBottom,textAreaBottom)
+
+            val menuBar = MenuBarImpl.create()
+            val statusBar = StatusBarImpl.create(Display.WIDHT)
+
+            val configure = ConfigurationImpl.create(display, ArrayList<Panel>(Arrays.asList(panel, panelCenter, panelBottom)), menuBar, statusBar)
 
             try {
                 val app = ApplicationImpl
@@ -38,9 +47,7 @@ object Main {
             } catch (e: ExecutionException) {
                 e.printStackTrace()
             } finally {
-                System.out.println("App startAsync")
             }
         }
-        System.out.println("Main runAsync")
     }
 }
