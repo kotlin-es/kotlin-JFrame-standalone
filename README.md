@@ -9,3 +9,7 @@
 * Start async application with statusBar
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-statusBar-application/src/main/resources/KFrame-async-statusBar.gif)
+
+* Start async application with menuBar
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-menuBar-application/src/main/resources/KFrame-async-menuBar.gif)
