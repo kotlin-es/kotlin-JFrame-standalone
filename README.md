@@ -13,3 +13,7 @@
 * Start async application with menuBar
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-menuBar-application/src/main/resources/KFrame-async-menuBar.gif)
+
+* Start async application with show messages
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-message-application/src/main/resources/KFrame-async-message.gif)
