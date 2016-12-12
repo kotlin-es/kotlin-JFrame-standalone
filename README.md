@@ -17,3 +17,8 @@
 * Start async application with show messages
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-message-application/src/main/resources/KFrame-async-message.gif)
+
+
+* Start async application with show dialogs
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-dialog-application/src/main/resources/KFrame-async-dialogs.gif)
