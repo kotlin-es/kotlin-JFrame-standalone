@@ -30,23 +30,24 @@ class StatusBarImpl internal constructor(private val _width : Int) : JPanel() , 
         this.add(statusLabel);
     }
 
-    override fun asyncUI()  {
+    override fun asyncUI() = asyncSpel(StatusBar.TEXT,1000L,50L)
+
+    override fun component() : JPanel? {
+        return this
+    }
+
+    private fun asyncSpel(str: String, delay: Long, sequence:Long) {
         ThreadMain.asyncUI {
             CompletableFuture.runAsync {
-                Thread.sleep(1000)
+                Thread.sleep(delay)
                 statusLabel.text = ""
-                for ( i in 0..StatusBar.TEXT.length-1) {
-                    Thread.sleep(50)
-                    statusLabel.text += StatusBar.TEXT[i].toString()
+                for (i in 0..str.length - 1) {
+                    Thread.sleep(sequence)
+                    statusLabel.text += str[i].toString()
                 }
             }.thenAcceptAsync {
                 asyncUI()
             }
         }
     }
-
-    override fun component() : JPanel? {
-        return this
-    }
-
 }

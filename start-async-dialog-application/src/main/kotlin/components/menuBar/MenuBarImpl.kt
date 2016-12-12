@@ -31,8 +31,8 @@ class MenuBarImpl internal constructor(val map : Map<String,Map<String, (ActionE
         val menu = JMenu(nameMenu)
 
         for (entry in map.entries) {
-            when (entry.key) {
-                "---" -> menu.addSeparator()
+            when {
+                entry.key.subSequence(0,3) == "---" -> menu.addSeparator()
                 else -> {
                     val menuItem = JMenuItem(entry.key)
                     menuItem.addActionListener(entry.value)

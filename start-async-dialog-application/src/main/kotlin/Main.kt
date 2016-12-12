@@ -1,7 +1,7 @@
 package src
 
-import components.dialog.DialogImpl
 import components.menuBar.child.MenuBarMessage
+import components.menuBar.child.MenuDialog
 import components.menuBar.child.MenuFile
 import components.progressBar.*
 import src.app.ApplicationImpl
@@ -13,7 +13,6 @@ import java.awt.FlowLayout
 import java.util.*
 import java.util.concurrent.ExecutionException
 import javax.swing.JFrame
-import javax.swing.JOptionPane
 import javax.swing.SwingUtilities
 
 /**
@@ -41,12 +40,15 @@ object Main {
             val progressBarBottom = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
             val panelBottom = PanelImpl.create(FlowLayout(),progressBarBottom,textAreaBottom)
 
+            val statusBar = StatusBarImpl.create(Display.WIDHT)
+
             val menuFile = MenuBarImpl.Companion.MenuFile()
             val menuMessage = MenuBarImpl.Companion.MenuBarMessage(frame)
-            val reduceMap = menuFile.mergeReduce(menuMessage)
+            val menuDialogs = MenuBarImpl.Companion.MenuDialog(frame)
+
+            val reduceMap = menuFile.mergeReduce(menuMessage.mergeReduce(menuDialogs))
             val menuBar = MenuBarImpl.create(reduceMap)
 
-            val statusBar = StatusBarImpl.create(Display.WIDHT)
 
             val configure = ConfigurationImpl.create(display, ArrayList<Panel>(Arrays.asList(panel, panelCenter, panelBottom)), menuBar, statusBar)
 
@@ -61,12 +63,7 @@ object Main {
                 e.printStackTrace()
             } finally {
 
-                DialogImpl(frame,Pair("Basic Dialog","Dialog with 2 buttons"), JOptionPane.YES_NO_OPTION)
-                        .showConfirmDialog({
-                            System.out.println("Pressed Ok button!!!")
-                        }, {
-                            System.out.println("Pressed Cancel button!!!")
-                        })
+
             }
         }
     }

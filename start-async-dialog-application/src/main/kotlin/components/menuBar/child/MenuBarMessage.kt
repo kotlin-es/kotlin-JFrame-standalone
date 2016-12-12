@@ -16,7 +16,7 @@ import javax.swing.JFrame
 public fun MenuBarImpl.Companion.MenuBarMessage(frame : JFrame): Map<String, Map<String, (ActionEvent) -> Unit>> {
     return object : HashMap<String, HashMap<String, (ActionEvent) -> Unit>>() {
         init {
-            put("Message",
+            put("Messages",
                     object : HashMap<String, (ActionEvent) -> Unit>() {
                         init {
                             put("Basic", { MessageImpl.create(frame, Pair("Basic", "Basic Message"), EnumMessage.PLAIN_MESSAGE) })
