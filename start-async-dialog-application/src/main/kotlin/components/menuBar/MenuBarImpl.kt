@@ -44,9 +44,8 @@ class MenuBarImpl internal constructor(val map : Map<String,Map<String, (ActionE
         return menu
     }
 
-    override fun component(): JMenuBar {
-        return this
-    }
+    override fun component(): JMenuBar  = this
+
 }
 
 

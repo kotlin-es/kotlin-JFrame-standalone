@@ -14,10 +14,10 @@ import javax.swing.JFrame
  * Created by vicboma on 12/12/16.
  */
 public fun MenuBarImpl.Companion.MenuBarMessage(frame : JFrame): Map<String, Map<String, (ActionEvent) -> Unit>> {
-    return object : HashMap<String, HashMap<String, (ActionEvent) -> Unit>>() {
+    return object : LinkedHashMap<String, Map<String, (ActionEvent) -> Unit>>() {
         init {
             put("Messages",
-                    object : HashMap<String, (ActionEvent) -> Unit>() {
+                    object : LinkedHashMap<String, (ActionEvent) -> Unit>() {
                         init {
                             put("Basic", { MessageImpl.create(frame, Pair("Basic", "Basic Message"), EnumMessage.PLAIN_MESSAGE) })
                             put("Information", { MessageImpl.create(frame, Pair("Information", "Information Message"), EnumMessage.INFORMATION_MESSAGE) })

@@ -26,7 +26,6 @@ class PanelImpl internal constructor( val layoutManager: LayoutManager, override
         add(textArea.component())
     }
 
-    override fun component() : JComponent {
-        return this
-    }
+    override fun component() : JComponent =  this
+
 }

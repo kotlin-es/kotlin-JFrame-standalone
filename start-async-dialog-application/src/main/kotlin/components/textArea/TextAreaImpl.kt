@@ -62,8 +62,6 @@ class TextAreaImpl internal constructor(val _text: String) : JTextArea() , TextA
         }
     }
 
-    override fun component() : JScrollPane? {
-        return scrollPane
-    }
+    override fun component() : JScrollPane?  = scrollPane
 
 }

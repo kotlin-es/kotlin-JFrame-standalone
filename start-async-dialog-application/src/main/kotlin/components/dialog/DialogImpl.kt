@@ -18,13 +18,9 @@ class DialogImpl internal constructor( private val frame : Frame, private val pa
 
     }
 
-    override fun showConfirmDialog(yes : () -> Unit) {
-        showConfirmDialog(yes,{},{});
-    }
+    override fun showConfirmDialog(yes : () -> Unit)  = showConfirmDialog(yes,{},{});
 
-    override fun showConfirmDialog(yes : () -> Unit,no : () -> Unit) {
-        showConfirmDialog(yes,no,{});
-    }
+    override fun showConfirmDialog(yes : () -> Unit,no : () -> Unit)  = showConfirmDialog(yes,no,{});
 
     override fun showConfirmDialog(yes : () -> Unit, no : () -> Unit, cancel : () -> Unit) {
         val res = JOptionPane.showConfirmDialog(frame, pair.second, pair.first, option)

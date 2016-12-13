@@ -37,10 +37,6 @@ class ProgressBarImpl internal constructor(val min: Int, val max: Int) : JProgre
         }
     }
 
-    override fun component() : JProgressBar {
-        return this
-    }
-
-
+    override fun component() : JProgressBar  =  this
 
 }

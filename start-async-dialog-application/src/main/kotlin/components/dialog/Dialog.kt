@@ -1,5 +1,7 @@
 package components.dialog
 
+import components.Component
+
 /**
  * Created by vicboma on 10/12/16.
  */

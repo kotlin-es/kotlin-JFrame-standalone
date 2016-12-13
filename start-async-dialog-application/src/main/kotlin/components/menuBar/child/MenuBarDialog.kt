@@ -11,10 +11,10 @@ import javax.swing.JOptionPane
  * Created by vicboma on 12/12/16.
  */
 public fun MenuBarImpl.Companion.MenuDialog(frame : JFrame): Map<String, Map<String, (ActionEvent) -> Unit>> {
-    return object : HashMap<String, HashMap<String, (ActionEvent) -> Unit>>() {
+    return object : LinkedHashMap<String, Map<String, (ActionEvent) -> Unit>>() {
         init {
             put("Dialogs",
-                    object : HashMap<String, (ActionEvent) -> Unit>() {
+                    object : LinkedHashMap<String, (ActionEvent) -> Unit>() {
                         init {
                             put("No - Yes", {
                               //  CompletableFuture.runAsync {
@@ -53,6 +53,7 @@ public fun MenuBarImpl.Companion.MenuDialog(frame : JFrame): Map<String, Map<Str
                             //     }
                             })
 
+                            put("---", {})
                         }
                     }
             )
