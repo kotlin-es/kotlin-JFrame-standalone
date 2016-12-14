@@ -53,7 +53,19 @@ public fun MenuBarImpl.Companion.MenuDialog(frame : JFrame): Map<String, Map<Str
                             //     }
                             })
 
-                            put("---", {})
+                            put("----", {})
+
+                            put("No - Yes Custom Message", {
+                                //   CompletableFuture.runAsync {
+                                DialogImpl(frame, Pair("Custom Dialog Message","<html>The magic <span style='color:green'>color</span> </html>"), JOptionPane.YES_NO_OPTION)
+                                        .showConfirmDialog({
+                                            System.out.println("Pressed Yes button!!!")
+                                        }, {
+                                            System.out.println("Pressed No button!!!")
+                                        })
+                                //     }
+                            })
+
                         }
                     }
             )
