@@ -13,7 +13,11 @@
 
     <modules>
         <module>start-async-application</module>
-        <module>start-coroutine-application</module>
+        <module>start-async-dialog-application</module>
+        <module>start-async-menuBar-application</module>
+        <module>start-async-message-application</module>
+        <module>start-async-statusBar-application</module>
+        <module>start-async-inputDialog-application</module>
     </modules>
 
     <developers>
