@@ -29,3 +29,7 @@
 * Start async application with subMenubar dialogs
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-subMenubar-application/src/main/resources/KFrame-async-subMenubar.gif)
+
+* Start async application with color chooser
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/07-start-async-colorChooser-application/src/main/resources/KFrame-async-color-chooser.gif)
