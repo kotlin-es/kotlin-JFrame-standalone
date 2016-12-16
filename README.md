@@ -18,7 +18,6 @@
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-message-application/src/main/resources/KFrame-async-message.gif)
 
-
 * Start async application with show confirm dialogs
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-dialog-application/src/main/resources/KFrame-async-dialogs.gif)
@@ -26,3 +25,7 @@
 * Start async application with show input dialogs
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-inputDialog-application/src/main/resources/KFrame-async-inputs.gif)
+
+* Start async application with subMenubar dialogs
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/start-async-subMenubar-application/src/main/resources/KFrame-async-subMenubar.gif)
