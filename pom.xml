@@ -12,12 +12,15 @@
     <name>Example of application with Kotlin</name>
 
     <modules>
-        <module>start-async-application</module>
-        <module>start-async-dialog-application</module>
-        <module>start-async-menuBar-application</module>
-        <module>start-async-message-application</module>
-        <module>start-async-statusBar-application</module>
-        <module>start-async-inputDialog-application</module>
+        <module>00-start-async-application</module>
+        <module>04-start-async-dialog-application</module>
+        <module>02-start-async-menuBar-application</module>
+        <module>03-start-async-message-application</module>
+        <module>01-start-async-statusBar-application</module>
+        <module>05-start-async-inputDialog-application</module>
+        <module>06-start-async-subMenubar-application</module>
+        <module>07-start-async-colorChooser-application</module>
+        <module>08-start-async-fileChooser-application</module>
     </modules>
 
     <developers>
