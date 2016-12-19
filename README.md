@@ -33,3 +33,7 @@
 * Start async application with color chooser
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/07-start-async-colorChooser-application/src/main/resources/KFrame-async-color-chooser.gif)
+
+* Start async application with file chooser
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/08-start-async-fileChooser-application/src/main/resources/KFrame-async-file-chooser.gif)
