@@ -41,3 +41,8 @@
 * Start async application with radio button
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/09-start-async-radiobutton-application/src/main/resources/KFrame-async-radioButton-chooser.gif)
+
+* Start async application with check button
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/10-start-async-checkbutton-application/src/main/resources/KFrame-async-checkButton-chooser.gif)
+
