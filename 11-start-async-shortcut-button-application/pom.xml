@@ -4,38 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kotlin.jframe.standalone</groupId>
-    <artifactId>kotlin-application</artifactId>
+    <groupId>com.kotlin.jframe.standalone.start.shorcutbutton.application.async</groupId>
+    <artifactId>start-async-shorcutbutton-application</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
-    <name>Example of application with Kotlin</name>
+    <packaging>jar</packaging>
 
-    <modules>
-        <module>00-start-async-application</module>
-        <module>04-start-async-dialog-application</module>
-        <module>02-start-async-menuBar-application</module>
-        <module>03-start-async-message-application</module>
-        <module>01-start-async-statusBar-application</module>
-        <module>05-start-async-inputDialog-application</module>
-        <module>06-start-async-subMenubar-application</module>
-        <module>07-start-async-colorChooser-application</module>
-        <module>08-start-async-fileChooser-application</module>
-        <module>09-start-async-radiobutton-application</module>
-        <module>10-start-async-checkbutton-application</module>
-        <module>11-start-async-shortcut-button-application</module>
-
-    </modules>
-
-    <developers>
-        <developer>
-            <id>1</id>
-            <name>Vicboma1</name>
-            <organization>kotlin.es</organization>
-            <organizationUrl>http://www.kotlin.es</organizationUrl>
-        </developer>
-    </developers>
-
+    <name>Example of start async application with shorcut buttons</name>
 
     <properties>
         <kotlin.version>1.0.1-2</kotlin.version>
@@ -49,17 +24,6 @@
         <timestamp>${maven.build.timestamp}</timestamp>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-
-    <licenses>
-        <license>
-            <name>The MIT License (MIT)</name>
-            <url>https://opensource.org/licenses/MIT/</url>
-            <distribution>repo</distribution>
-            <comments></comments>
-        </license>
-    </licenses>
-
 
     <dependencies>
         <dependency>
@@ -174,3 +138,4 @@
         </plugins>
     </build>
 </project>
+

@@ -6,6 +6,7 @@ import components.menuBar.child.MenuBarFile
 import components.menuBar.child.dialog.MenuBarConfirm
 import components.menuBar.child.dialog.MenuBarInput
 import components.menuBar.child.dialog.MenuBarMessage
+import components.menuBar.child.file.MenuBarFileItemExit
 import components.progressBar.*
 import src.app.ApplicationImpl
 import src.configuration.ConfigurationImpl
@@ -16,7 +17,6 @@ import java.util.*
 import java.util.concurrent.ExecutionException
 import javax.swing.JComponent
 import javax.swing.JFrame
-import javax.swing.JMenuItem
 import javax.swing.SwingUtilities
 
 /**
@@ -81,7 +81,7 @@ object Main {
                 .addSeparator(menuFile)
                 .createSubMenu(menuFile,menuFileCheckSubMenu)
                 .addSeparator(menuFile)
-                .createSubMenu(menuFile, JMenuItem("Exit"))
+                .createSubMenu(menuFile, MenuItemImpl.Companion.MenuBarFileItemExit(frame))
 
 
             // Menu Item Dialog
@@ -95,10 +95,10 @@ object Main {
             menuBar.createSubMenu(menuDialog,menuDialogSubMenu)
 
             //Menu Item Chooser
-            var menuChooser = menuBar.createMenu(MenuBarImpl.MenuBarChooser(frame))
+            //var menuChooser = menuBar.createMenu(MenuBarImpl.MenuBarChooser(frame))
 
 
-            val menuList = Arrays.asList<JComponent>(menuFile, menuDialog,menuChooser)
+            val menuList = Arrays.asList<JComponent>(menuFile, menuDialog)//,menuChooser)
             menuBar.addMenu(menuList)
 
 
