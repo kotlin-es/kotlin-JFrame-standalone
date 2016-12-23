@@ -1,4 +1,4 @@
-package utils.Fps
+package utils.fps
 
 import java.util.concurrent.CompletableFuture
 

@@ -1,4 +1,4 @@
-package utils.Monitor
+package utils.monitor
 
 import com.sun.management.OperatingSystemMXBean
 import java.lang.management.ManagementFactory

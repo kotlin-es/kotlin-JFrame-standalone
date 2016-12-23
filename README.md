@@ -46,3 +46,7 @@
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/10-start-async-checkbutton-application/src/main/resources/KFrame-async-checkButton-chooser.gif)
 
+* 11 - Start async application with short cut button
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/11-start-async-shortcut-button-application/src/main/resources/KFrame-async-shortcutbutton-chooser.gif)
+
