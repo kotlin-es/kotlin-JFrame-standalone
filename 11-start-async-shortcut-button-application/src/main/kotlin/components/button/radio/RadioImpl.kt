@@ -21,7 +21,4 @@ class RadioImpl internal constructor() : javax.swing.JRadioButton() , Radio{
     init{
 
     }
-
-    override fun component() : JComponent =  this
-
 }

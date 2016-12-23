@@ -33,17 +33,17 @@ object Main {
             //Top Panel
             var textArea = TextAreaImpl.create(TextArea.TEXT)
             val progressBar = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
-            val panel = PanelImpl.create(FlowLayout(),Pair(progressBar.component(),textArea))
+            val panel = PanelImpl.create(FlowLayout(),Pair(progressBar,textArea))
 
             //Center Panel
             var textAreaCenter = TextAreaImpl.create(TextArea.KAFKA)
             val progressBarCenter = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
-            val panelCenter = PanelImpl.create(FlowLayout(),Pair(progressBarCenter.component(),textAreaCenter))
+            val panelCenter = PanelImpl.create(FlowLayout(),Pair(progressBarCenter,textAreaCenter))
 
             //Bottom Panel
             var textAreaBottom = TextAreaImpl.create(TextArea.LOREMIPSUM)
             val progressBarBottom = ProgressBarImpl.create(ProgressBar.MIN, ProgressBar.MAX)
-            val panelBottom = PanelImpl.create(FlowLayout(),Pair(progressBarBottom.component(),textAreaBottom))
+            val panelBottom = PanelImpl.create(FlowLayout(),Pair(progressBarBottom,textAreaBottom))
 
 
             //StatusBar

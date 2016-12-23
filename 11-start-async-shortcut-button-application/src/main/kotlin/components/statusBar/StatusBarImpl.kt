@@ -32,8 +32,6 @@ class StatusBarImpl internal constructor(private val _width : Int) : JPanel() , 
 
     override fun asyncUI() = asyncSpel(StatusBar.TEXT,1000L,50L)
 
-    override fun component() : JPanel = this
-
     private fun asyncSpel(str: String, delay: Long, sequence:Long) {
         ThreadMain.asyncUI {
             CompletableFuture.runAsync {

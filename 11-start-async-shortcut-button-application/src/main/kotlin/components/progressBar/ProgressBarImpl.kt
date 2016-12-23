@@ -1,5 +1,6 @@
 package components.progressBar
 
+import components.Renderable
 import utils.ThreadMain
 import java.awt.Component
 import java.util.concurrent.CompletableFuture
@@ -11,7 +12,7 @@ import javax.swing.JProgressBar
 class ProgressBarImpl internal constructor(val min: Int, val max: Int) : JProgressBar(min,max) , ProgressBar {
 
     companion object {
-        fun create(min: Int, max: Int): ProgressBar {
+        fun create(min: Int, max: Int): Renderable {
             return ProgressBarImpl(min,max)
         }
     }
@@ -36,7 +37,4 @@ class ProgressBarImpl internal constructor(val min: Int, val max: Int) : JProgre
             }
         }
     }
-
-    override fun component() : JProgressBar  =  this
-
 }

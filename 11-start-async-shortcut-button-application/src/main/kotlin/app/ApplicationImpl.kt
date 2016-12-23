@@ -4,6 +4,7 @@ import src.configuration.Configuration
 import java.awt.BorderLayout
 import java.awt.FlowLayout
 import java.util.concurrent.CompletableFuture
+import javax.swing.JComponent
 import javax.swing.JFrame
 
 /**
@@ -75,7 +76,7 @@ class ApplicationImpl internal constructor(private val frame: JFrame) : Applicat
 
     private fun setContentPane() {
         configuration?.panel?.forEach {
-            frame.contentPane.add(it.component(), BorderLayout.CENTER)
+            frame.contentPane.add(it as JComponent, BorderLayout.CENTER)
         }
     }
 
@@ -84,7 +85,7 @@ class ApplicationImpl internal constructor(private val frame: JFrame) : Applicat
     }
 
     private fun setStatusBar() {
-        frame.add(configuration?.statusBar?.component(), BorderLayout.SOUTH);
+        frame.add(configuration?.statusBar as JComponent, BorderLayout.SOUTH);
     }
 
     private fun asyncOperations() {

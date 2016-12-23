@@ -25,9 +25,6 @@ class ColorChooserImpl internal constructor(private val title: String, private v
         if(null != color)
             callback.invoke(   color)
     }
-
-    override fun component(): JColorChooser  = this
-
 }
 
 

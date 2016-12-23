@@ -10,10 +10,10 @@ import javax.swing.JPanel
 /**
  * Created by vicboma on 05/12/16.
  */
-class PanelImpl internal constructor(private val layoutManager: LayoutManager, private val pair: Pair<JComponent,TextArea>) : JPanel(layoutManager) , Panel {
+class PanelImpl internal constructor(private val layoutManager: LayoutManager, private val pair: Pair<Renderable,TextArea>) : JPanel(layoutManager) , Panel {
 
     companion object {
-        fun create(layout: LayoutManager,pair: Pair<JComponent,TextArea>): Panel {
+        fun create(layout: LayoutManager,pair: Pair<Renderable,TextArea>): Panel {
             return PanelImpl(layout,pair)
         }
     }
@@ -24,7 +24,7 @@ class PanelImpl internal constructor(private val layoutManager: LayoutManager, p
         setLayout(BoxLayout(this, BoxLayout.Y_AXIS))
 
 
-        this.add(pair.first)
+        this.add(pair.first as JComponent)
         this.add(pair.second.component())
 
     }
@@ -33,7 +33,5 @@ class PanelImpl internal constructor(private val layoutManager: LayoutManager, p
         (pair.first as Renderable).asyncUI()
         pair.second.asyncUI()
     }
-
-    override fun component() : JPanel = this
 
 }

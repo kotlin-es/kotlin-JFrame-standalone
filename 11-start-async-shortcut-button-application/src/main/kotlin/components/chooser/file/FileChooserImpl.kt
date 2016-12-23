@@ -31,9 +31,6 @@ class FileChooserImpl internal constructor(private val frame : JFrame) : javax.s
             else  ->  callback.invoke("ERROR_OPTION")
         }
     }
-
-    override fun component(): JFileChooser  = this
-
 }
 
 

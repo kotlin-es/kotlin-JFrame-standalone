@@ -1,5 +1,6 @@
-package components.menuBar
+package components.menuBar.child
 
+import components.menuBar.child.dialog.MenuInput
 import components.menuBar.child.dialog.MenuMessage
 import components.progressBar.Menu
 import components.progressBar.MenuBarImpl
@@ -15,6 +16,6 @@ public fun MenuBarImpl.Companion.MenuDialog(frame: JFrame): Menu {
             .create("Dialog")
             .addMenuItem(MenuBarImpl.MenuMessage(frame))
             .addMenuItem(MenuBarImpl.MenuConfirm(frame))
-            //.addMenuItem(MenuImpl.MenuInput(frame))
+            .addMenuItem(MenuBarImpl.MenuInput(frame))
 
 }

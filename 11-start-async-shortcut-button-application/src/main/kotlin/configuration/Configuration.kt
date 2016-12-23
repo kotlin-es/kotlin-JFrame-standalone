@@ -1,6 +1,5 @@
 package src.configuration
 
-import components.progressBar.MenuBar
 import components.progressBar.MenuBarImpl
 import components.progressBar.Panel
 import components.progressBar.StatusBar

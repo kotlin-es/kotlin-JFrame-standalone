@@ -17,6 +17,4 @@ class CheckImpl internal constructor() : javax.swing.JCheckBox() , Check{
     init{
 
     }
-
-    override fun component() : JComponent =  this
 }
