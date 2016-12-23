@@ -1,6 +1,7 @@
 package src.configuration
 
 import components.progressBar.MenuBar
+import components.progressBar.MenuBarImpl
 import components.progressBar.Panel
 import components.progressBar.StatusBar
 import java.util.*
@@ -11,6 +12,6 @@ import java.util.*
 interface Configuration {
     val panel: ArrayList<Panel>?
     val display: Display?
-    val menuBar: MenuBar?
+    val menuBar: MenuBarImpl?
     val statusBar: StatusBar?
 }

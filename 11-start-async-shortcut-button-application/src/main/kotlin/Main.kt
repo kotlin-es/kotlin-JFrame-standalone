@@ -1,12 +1,7 @@
 package src
 
 import components.menuBar.child.MenuBarChooser
-import components.menuBar.child.MenuBarDialog
 import components.menuBar.child.MenuBarFile
-import components.menuBar.child.dialog.MenuBarConfirm
-import components.menuBar.child.dialog.MenuBarInput
-import components.menuBar.child.dialog.MenuBarMessage
-import components.menuBar.child.file.MenuBarFileItemExit
 import components.progressBar.*
 import src.app.ApplicationImpl
 import src.configuration.ConfigurationImpl
@@ -15,7 +10,6 @@ import src.configuration.DisplayImpl
 import java.awt.FlowLayout
 import java.util.*
 import java.util.concurrent.ExecutionException
-import javax.swing.JComponent
 import javax.swing.JFrame
 import javax.swing.SwingUtilities
 
@@ -54,51 +48,19 @@ object Main {
             //StatusBar
             val statusBar = StatusBarImpl.create(Display.WIDHT)
 
-
-
             //Menubar
             val menuBar = MenuBarImpl.create()
 
             //File Item Menu
-            val menuFile = menuBar.createMenu(MenuBarImpl.MenuBarFile())
-
-            val menuFileRadioSubMenu = Arrays.asList(
-                    RadioItemImpl.create("Open", true).component(),
-                    RadioItemImpl.create("Open Url", false).component(),
-                    RadioItemImpl.create("Open Recent", false).component()
-            )
-
-            val menuFileCheckSubMenu = Arrays.asList(
-                    CheckItemImpl.create("Import Setting", true).component(),
-                    CheckItemImpl.create("Export Setting", false).component(),
-                    CheckItemImpl.create("Setting Repository", true).component()
-            )
-
-            val menuFileRadioGroup = GroupImpl(menuFileRadioSubMenu)
-
-            menuBar
-                .createSubMenu(menuFile,menuFileRadioSubMenu)
-                .addSeparator(menuFile)
-                .createSubMenu(menuFile,menuFileCheckSubMenu)
-                .addSeparator(menuFile)
-                .createSubMenu(menuFile, MenuItemImpl.Companion.MenuBarFileItemExit(frame))
-
-
+            val menuFile = MenuBarImpl.MenuBarFile(frame)
             // Menu Item Dialog
-            val menuDialog = menuBar.createMenu(MenuBarImpl.MenuBarDialog())
-            val menuDialogSubMenu = Arrays.asList(
-                    menuBar.createMenu(MenuBarImpl.MenuBarMessage(frame)),
-                    menuBar.createMenu(MenuBarImpl.MenuBarConfirm(frame)),
-                    menuBar.createMenu(MenuBarImpl.MenuBarInput(frame))
-            )
-
-            menuBar.createSubMenu(menuDialog,menuDialogSubMenu)
+           // val menuDialog = MenuBarImpl.MenuBarDialog(frame)
 
             //Menu Item Chooser
-            //var menuChooser = menuBar.createMenu(MenuBarImpl.MenuBarChooser(frame))
+            var menuChooser = MenuBarImpl.MenuBarChooser(frame)
 
 
-            val menuList = Arrays.asList<JComponent>(menuFile, menuDialog)//,menuChooser)
+            val menuList = Arrays.asList(menuFile/*, menuDialog.component())*/,menuChooser)
             menuBar.addMenu(menuList)
 
 

@@ -80,7 +80,7 @@ class ApplicationImpl internal constructor(private val frame: JFrame) : Applicat
     }
 
     private fun setMenuBar() {
-        frame.jMenuBar = configuration?.menuBar?.component()
+        frame.jMenuBar = configuration?.menuBar
     }
 
     private fun setStatusBar() {

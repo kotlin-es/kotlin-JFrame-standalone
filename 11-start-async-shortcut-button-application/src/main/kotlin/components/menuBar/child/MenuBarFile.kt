@@ -1,45 +1,27 @@
 package components.menuBar.child
 
-import components.progressBar.MenuBarImpl
-import java.awt.event.ActionEvent
-import java.util.*
-import javax.swing.JMenuItem
+import components.dialog.message.EnumDialog
+import components.dialog.message.MessageImpl
+import components.progressBar.*
+import java.awt.event.KeyEvent
+import javax.swing.JFrame
 
 /**
  * Created by vicboma on 12/12/16.
  */
-public fun MenuBarImpl.Companion.MenuBarFile(): Map<String, Map<String, (ActionEvent) -> Unit>> {
-    return object : LinkedHashMap<String, Map<String, (ActionEvent) -> Unit>>() {
-        init {
-            put("File",LinkedHashMap<String, (ActionEvent) -> Unit>())
-        }
-    }
+public fun MenuBarImpl.Companion.MenuBarFile(frame: JFrame): Menu {
+        return MenuImpl
+                .create("File")
+                .addMenuItem(RadioItemImpl.create("Open", true))
+                .addMenuItem(RadioItemImpl.create("Open Url", false))
+                .addMenuItem(RadioItemImpl.create("Open Recent", false))
+                .putSeparator()
+                .addMenuItem(CheckItemImpl.create("Import Setting", true))
+                .addMenuItem(CheckItemImpl.create("Export Setting", false))
+                .addMenuItem(CheckItemImpl.create("Setting Repository", true))
+                .putSeparator()
+                .addMenuItem(MenuItemImpl.create("Exit", KeyEvent.VK_E,{
+                    MessageImpl.create(frame, Pair("Exit Message","GoodBye"), EnumDialog.PLAIN_MESSAGE).showDialog()
+                    System.exit(0)
+                }))
 }
-
-private fun clickAction(it: ActionEvent) {
-    var item = (it.source as JMenuItem)
-    item.text = it.actionCommand.plus("  -  (Clicked!)")
-    item.removeActionListener(item.actionListeners.get(0))
-}
-
-/*
-// create an Action doing what you want
-Action action = new AbstractAction("doSomething") {
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("triggered the action");
-    }
-
-};
-// configure the Action with the accelerator (aka: short cut)
-action.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control S"));
-
-// create a button, configured with the Action
-JButton toolBarButton = new JButton(action);
-// manually register the accelerator in the button's component input map
-toolBarButton.getActionMap().put("myAction", action);
-toolBarButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(
-(KeyStroke) action.getValue(Action.ACCELERATOR_KEY), "myAction");*/
-
-
