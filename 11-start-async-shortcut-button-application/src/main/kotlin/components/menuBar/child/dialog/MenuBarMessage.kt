@@ -1,41 +1,46 @@
 package components.menuBar.child.dialog
 
+import components.dialog.message.EnumDialog
+import components.dialog.message.MessageImpl
+import components.progressBar.Menu
+import components.progressBar.MenuBarImpl
+import components.progressBar.MenuImpl
+import components.progressBar.MenuItemImpl
+import java.awt.event.KeyEvent
+import java.net.URL
+import java.util.*
+import java.util.concurrent.CompletableFuture
+import javax.swing.ImageIcon
+import javax.swing.JFrame
+
 /**
  * Created by vicboma on 12/12/16.
  */
-/*public fun MenuBarImpl.Companion.MenuBarMessage(frame: JFrame): MenuBar {
-    return MenuBarImpl
+public fun MenuBarImpl.Companion.MenuMessage(frame: JFrame): Menu {
+    return MenuImpl
             .create("Message")
-            .addMenu(Arrays.asList(
+            .addMenuItem(Arrays.asList(
 
-                    MenuItemImpl.create("Basic", {
+                    MenuItemImpl.create("Basic", KeyEvent.VK_B, {
                         MessageImpl.create(frame, Pair("Basic", "Basic Message"), EnumDialog.PLAIN_MESSAGE).showDialog()
-                    }).component()
+                    }) ,
 
-                    ,
-                    MenuItemImpl.create("Information", {
+                    MenuItemImpl.create("Information", KeyEvent.VK_I, {
                         MessageImpl.create(frame, Pair("Information", "Information Message"), EnumDialog.INFORMATION_MESSAGE).showDialog()
-                    }).component()
+                    }) ,
 
-                    ,
-
-                    MenuItemImpl.create("Warning", {
+                    MenuItemImpl.create("Warning", KeyEvent.VK_W, {
                         MessageImpl.create(frame, Pair("Warning", "Warning Message"), EnumDialog.WARNING_MESSAGE).showDialog()
-                    }).component()
-
-                    ,
+                    }) ,
 
                     MenuItemImpl.create("Error", {
                         MessageImpl.create(frame, Pair("Error", "Error Message"), EnumDialog.ERROR_MESSAGE).showDialog()
-                    }).component()
-
-                    ,
+                    }) ,
 
                     MenuItemImpl.create("Custom", {
                         CompletableFuture.runAsync {
                             MessageImpl.create(frame, Pair("Custom", "Custom Message Download Async Image"), EnumDialog.INFORMATION_MESSAGE, ImageIcon(URL("https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png"))).showDialog()
                         }
-                    }).component()
+                    })
             ))
 }
-*/

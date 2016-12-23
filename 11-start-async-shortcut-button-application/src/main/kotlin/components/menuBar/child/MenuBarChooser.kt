@@ -10,7 +10,7 @@ import javax.swing.JFrame
 /**
  * Created by vicboma on 12/12/16.
  */
-public fun MenuBarImpl.Companion.MenuBarChooser(frame : JFrame): Menu {
+public fun MenuBarImpl.Companion.MenuChooser(frame : JFrame): Menu {
     return MenuImpl
             .create("Chooser")
             .addMenuItem(MenuItemImpl.create("Color", KeyEvent.VK_C,{

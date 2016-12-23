@@ -3,7 +3,7 @@ package components.menuBar.child.dialog
 /**
  * Created by vicboma on 12/12/16.
  */
-/*public fun MenuBarImpl.Companion.MenuBarInput(frame: JFrame): MenuBar {
+/*public fun MenuBarImpl.Companion.MenuInput(frame: JFrame): MenuBar {
     return MenuBarImpl
             .create("Confirm")
             .addMenu(Arrays.asList(

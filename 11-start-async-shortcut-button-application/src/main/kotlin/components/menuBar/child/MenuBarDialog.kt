@@ -1,13 +1,20 @@
-package components.menuBar.child
+package components.menuBar
+
+import components.menuBar.child.dialog.MenuMessage
+import components.progressBar.Menu
+import components.progressBar.MenuBarImpl
+import components.progressBar.MenuImpl
+import menuBar.child.dialog.MenuConfirm
+import javax.swing.JFrame
 
 /**
  * Created by vicboma on 12/12/16.
  */
-/*public fun MenuBarImpl.Companion.MenuDialog(frame: JFrame): Menu {
+public fun MenuBarImpl.Companion.MenuDialog(frame: JFrame): Menu {
     return MenuImpl
             .create("Dialog")
-            .addMenuItem(MenuImpl.MenuBarMessage(frame))
-            .addMenuItem(MenuImpl.MenuBarConfirm(frame))
-            .addMenuItem(MenuImpl.MenuBarInput(frame))
+            .addMenuItem(MenuBarImpl.MenuMessage(frame))
+            .addMenuItem(MenuBarImpl.MenuConfirm(frame))
+            //.addMenuItem(MenuImpl.MenuInput(frame))
 
-}*/
+}

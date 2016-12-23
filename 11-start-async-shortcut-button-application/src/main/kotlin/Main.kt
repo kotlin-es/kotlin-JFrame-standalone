@@ -1,7 +1,8 @@
 package src
 
-import components.menuBar.child.MenuBarChooser
-import components.menuBar.child.MenuBarFile
+import components.menuBar.child.MenuChooser
+import components.menuBar.child.MenuDialog
+import components.menuBar.child.MenuFile
 import components.progressBar.*
 import src.app.ApplicationImpl
 import src.configuration.ConfigurationImpl
@@ -52,15 +53,14 @@ object Main {
             val menuBar = MenuBarImpl.create()
 
             //File Item Menu
-            val menuFile = MenuBarImpl.MenuBarFile(frame)
+            val menuFile = MenuBarImpl.MenuFile(frame)
             // Menu Item Dialog
-           // val menuDialog = MenuBarImpl.MenuBarDialog(frame)
-
+            val menuDialog = MenuBarImpl.MenuDialog(frame)
             //Menu Item Chooser
-            var menuChooser = MenuBarImpl.MenuBarChooser(frame)
+            var menuChooser = MenuBarImpl.MenuChooser(frame)
 
 
-            val menuList = Arrays.asList(menuFile/*, menuDialog.component())*/,menuChooser)
+            val menuList = Arrays.asList(menuFile, menuDialog,menuChooser)
             menuBar.addMenu(menuList)
 
 
