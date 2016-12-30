@@ -1,6 +1,6 @@
 package utils
 
-import java.util.concurrent.CompletableFuture
+import utils.thread.CustomExecutor
 import javax.swing.SwingUtilities
 
 /**
@@ -8,7 +8,8 @@ import javax.swing.SwingUtilities
  */
 object ThreadMain {
 
-    fun asyncUI(runnable: () -> Unit){
+    fun asyncUI(runnable: () -> Unit) {
+
         if (SwingUtilities.isEventDispatchThread()) {
             async(runnable)
         } else {
@@ -18,11 +19,9 @@ object ThreadMain {
         }
     }
 
-    private fun async(runnable: () -> Unit) {
-        CompletableFuture.runAsync {
-            SwingUtilities.invokeLater {
-                runnable.invoke()
-            }
+    private fun async(runnable: () -> Unit) = CustomExecutor.instance.add{
+        SwingUtilities.invokeLater {
+            runnable.invoke()
         }
     }
 }
