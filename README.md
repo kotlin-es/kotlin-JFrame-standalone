@@ -50,3 +50,10 @@
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/11-start-async-shortcut-button-application/src/main/resources/KFrame-async-shortcutbutton-chooser.gif)
 
+* 12 - Start async application with spinner button
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/12-start-async-spinner-button-application/src/main/resources/KFrame-async-spinnerButton-appication.gif)
+
+* 13 - Start async application with slider component
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/13-start-async-slider-button-application/src/main/resources/KFrame-async-sliderButton-appication.gif)
