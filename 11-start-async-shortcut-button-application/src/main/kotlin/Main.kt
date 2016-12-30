@@ -59,7 +59,6 @@ object Main {
             //Menu Item Chooser
             var menuChooser = MenuBarImpl.MenuChooser(frame)
 
-
             val menuList = Arrays.asList(menuFile, menuDialog,menuChooser)
             menuBar.addMenu(menuList)
 
