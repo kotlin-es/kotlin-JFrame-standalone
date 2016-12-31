@@ -57,3 +57,7 @@
 * 13 - Start async application with slider component
 
 ![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/13-start-async-slider-button-application/src/main/resources/KFrame-async-sliderButton-appication.gif)
+
+* 14 - Start async application with menuBar block 
+
+![](https://github.com/kotlin-es/kotlin-JFrame-standalone/blob/master/14-start-async-menuBar-block-application/src/main/resources/KFrame-async-menuBar-block-appication.gif)

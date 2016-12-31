@@ -27,9 +27,9 @@ class InputImpl internal constructor(private val frame : Frame, private val pair
     }
 
     override fun showDialog(callback: (str: String) -> Unit) {
-        val res = JOptionPane.showInputDialog(frame, pair.second, pair.first, option.value, icon, selectionValues?.toArray(), initialSelectionValue) as String
+        val res = JOptionPane.showInputDialog(frame, pair.second, pair.first, option.value, icon, selectionValues?.toArray(), initialSelectionValue)
         if(null != res)
-            callback.invoke(res)
+            callback.invoke(res.toString())
     }
 }
 
